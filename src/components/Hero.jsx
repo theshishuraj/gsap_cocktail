@@ -19,6 +19,7 @@ const Hero = () => {
       type: "lines",
     });
 
+    // Apply text-gradient class once before animating
     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
     gsap.from(heroSplit.chars, {
@@ -59,14 +60,14 @@ const Hero = () => {
         end: endValue,
         scrub: true,
         pin: true,
-      }
-    })
+      },
+    });
 
     videoRef.current.onloadedmetadata = () => {
       videoTl.to(videoRef.current, {
         currentTime: videoRef.current.duration
       })
-    }
+    };
 
   }, []);
 
